@@ -1,0 +1,119 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    
+    width: 90%;
+    max-width: 800px;
+    height: 90%;
+    z-index: 1; /* Ensure it appears above the stars */
+    position: relative;
+}
+
+h1 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: #fff;
+}
+
+.menu {
+    height: calc(90% - 50px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.menu img {
+    max-height: 100%;
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    object-fit: contain;
+    transition: opacity 0.5s ease-in-out; /* This should match the JS timing */
+}
+
+
+.navigation {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ffc100;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 120px; /* Ensuring buttons are the same width */
+    height: 50px; /* Ensuring buttons are the same height */
+    transition: background-color 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    color: #666; /* Adjust text color for disabled state */
+}
+
+button:hover:not(:disabled) {
+    background-color: #e0a800;
+}
+
+/* Starry Background */
+.stars, .twinkling, .shooting-stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.stars {
+    background: transparent url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/stars.png') repeat top center;
+    animation: move-stars 100s linear infinite;
+}
+
+.twinkling {
+    background: transparent url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/twinkling.png') repeat top center;
+    animation: move-twinkling 200s linear infinite;
+}
+
+.shooting-stars {
+    background: transparent url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/shooting-stars.png') repeat top center;
+    animation: move-shooting-stars 50s linear infinite;
+}
+
+@keyframes move-stars {
+    from {transform: translateY(0);}
+    to {transform: translateY(-1000px);}
+}
+
+@keyframes move-twinkling {
+    from {transform: translateY(0);}
+    to {transform: translateY(-1000px);}
+}
+
+@keyframes move-shooting-stars {
+    from {transform: translateY(0);}
+    to {transform: translateY(-1000px);}
+}
